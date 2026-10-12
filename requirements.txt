@@ -1,0 +1,12 @@
+# Homework 6 local document reader and Portkey-backed PydanticAI agent.
+python-dotenv>=1.0,<2
+tiktoken==0.14.0
+pydantic-ai-slim[openai]==2.42.0
+pypdf>=6,<7
+openai==3.29.0
+httpx2==2.13.1
+pymupdf>=1.26,<2
+beautifulsoup4>=4.13,<5
+tinycss2>=1.4,<2
+reportlab>=4,<5
+playwright>=1.50,<2

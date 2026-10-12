@@ -1,0 +1,29 @@
+{
+  "html_sha256": "485959bbfe93c21133dfefecfbafbda3446efa3176d27e6de79159c799b142a0",
+  "isolated_directory_only_html": true,
+  "browser": "Headless Edge/Chromium",
+  "network_offline": true,
+  "external_resource_requests": [],
+  "javascript_errors": [],
+  "checks": {
+    "initial_content_charts_tables": true,
+    "section_navigation_and_sticky_header_offset": true,
+    "exam_filters_and_empty_search": true,
+    "decision_reason_expansion": true,
+    "projection_volume_and_cohort_controls": true,
+    "json_download_matches_unedited_exam_results": true,
+    "print_control_wiring": true,
+    "embedded_rendering_preview": true,
+    "responsive_page_no_horizontal_overflow": [
+      1440,
+      1280,
+      1024,
+      768,
+      640
+    ],
+    "print_styles": true,
+    "static_report_without_javascript": true
+  },
+  "screenshots": "output\\hw6_report_previews",
+  "visual_inspection": "Inspected desktop and compact overview screenshots, cost/security charts, defense-overhead table, four attack cards and ten-row exam table. Typography, values and layout are legible. Print dialog was stubbed; no physical printing was performed."
+}

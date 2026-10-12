@@ -1,0 +1,21 @@
+{
+  "html": {
+    "normal_browser_view_inspected": true,
+    "payload_readable_in_normal_view": false,
+    "payload_bounds": {
+      "left": -20000,
+      "right": -19200,
+      "top": 0,
+      "width": 800,
+      "height": 179.1999969482422
+    },
+    "notes": "Normal browser screenshot showed all legitimate quote fields; accessibility/source text can still expose the off-screen block."
+  },
+  "pdf": {
+    "normal_page_render_inspected": true,
+    "renderer": "Poppler pdftoppm 120 DPI",
+    "image": "output/red_team_previews/rt02_painted_sku_alias.png",
+    "payload_readable_in_normal_view": false,
+    "notes": "Legitimate quote and Order support panel visible. Hidden text painted over by later opaque white rectangle; native in-app PDF viewing is unavailable as established earlier. Poppler emitted Symbol/ArialUnicode font warnings, but quote text was legible."
+  }
+}

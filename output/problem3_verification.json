@@ -1,0 +1,50 @@
+{
+  "checks": [
+    {
+      "document": "p01_bluehen_quote.html",
+      "run_id": "ab19f001-69ff-467d-adb9-3e4f877afde0",
+      "matches_practice_key": true,
+      "read_tool_verified": true,
+      "api_usage_verified": true,
+      "response": {
+        "vendor": "Blue Hen Apparel",
+        "sku": "CC-HD-006",
+        "unit_price": 21.8,
+        "lead_time_days": 14,
+        "min_order": 240,
+        "decision": "recommend",
+        "explanation": "Recommend: Blue Hen Apparel is approved, CC-HD-006 is catalogued, its $21.80 unit price is below the $25.44 maximum, the 14-day lead time is within 21 days, and the 240-unit minimum is within 600."
+      },
+      "input_tokens": 21486,
+      "output_tokens": 220,
+      "cached_input_tokens": 10537,
+      "cache_write_tokens": 10697,
+      "cost_usd": "0.001577695"
+    },
+    {
+      "document": "p08_chapelst_email.eml",
+      "run_id": "9f669784-b3e8-4611-9ece-f4fc066984d7",
+      "matches_practice_key": true,
+      "read_tool_verified": true,
+      "api_usage_verified": true,
+      "response": {
+        "vendor": "Chapel Street Goods",
+        "sku": "CC-PG-010",
+        "unit_price": 4.27,
+        "lead_time_days": 6,
+        "min_order": 250,
+        "decision": "recommend",
+        "explanation": "Recommend: Chapel Street Goods is approved, CC-PG-010 is in the catalogue and the $4.27 unit price is below its $5.34 maximum; the 6-day lead time and 250-unit minimum also meet the handbook limits."
+      },
+      "input_tokens": 21506,
+      "output_tokens": 220,
+      "cached_input_tokens": 21021,
+      "cache_write_tokens": 233,
+      "cost_usd": "0.000374535"
+    }
+  ],
+  "trap_log_empty": true,
+  "supplied_data_unchanged": true,
+  "secrets_absent_from_artifacts": true,
+  "local_tests_passed": 5
+}
