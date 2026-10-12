@@ -1,5 +1,5 @@
 {
-  "html_sha256": "6f3c501a861adf90d6fafd7839cff234f8ae92cd1c5144a3e5cd3156cffb0c07",
+  "html_sha256": "1ee85a914755ee0d762867b6ac16a19ae5cbe6ae5edd1d3d9a3e790e55647223",
   "isolated_directory_only_html": true,
   "browser": "Headless Edge/Chromium",
   "network_offline": true,
@@ -25,5 +25,5 @@
     "static_report_without_javascript": true
   },
   "screenshots": "output\\hw6_report_previews",
-  "visual_inspection": "Desktop and compact overview, charts, overhead table, attack cards and exam rows were visually inspected in Problem 9; the refreshed submission report retains that layout. Offline controls and responsive widths passed again. Print dialog was stubbed, not physically printed."
+  "visual_inspection": "Reviewed desktop overview, all ten exam rows and historical/current red-team cards; final overview label also checked. No layout defect observed. Print dialog was stubbed, not physically printed."
 }

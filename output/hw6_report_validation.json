@@ -3,12 +3,12 @@
     "handbook_estimate.md": "a1366cd00b922dd63c4cab65b1e834eccd32fc08e845fd0ce023d37777087d1f",
     "cache_test.json": "c3852ec7ebc9c0c979bfe33617f941c2260a4a06062a4f3c2382b7b38a704f89",
     "cache_test.md": "fcb6ee11f3e86ef2c93e59f54a65682b591106f098c46ef9c003222835620746",
-    "attack_results.json": "f1b960a1f460b4dfbc2d8d0287486b77fa0d785aad0889a176e392edcc01a561",
-    "attack_results.md": "b3c8ae1db2a3e0e5e2f60be9096474c4c1015909bd8fc79cbbeb54b0d0fa0c5c",
-    "defense_results.json": "dbd77775cc5bd5a5c50e1b2e9ae7c8ab8de35b14a2b74d59ab74b4526042cb0e",
-    "defense_results.md": "f6d66a725621fc35d23a8945679dbbb6e6a8ad9f112f3a8310bd5e0d6d52d389",
+    "attack_results.json": "1feac995595d2e4f0f534968f00019e7a5695f81e5a8fffd6cbb84972f2bdcd3",
+    "attack_results.md": "2b488695b6a2d7622a8fa8b87308f18fc54b064d7e100061af4a1bea63fbdb3b",
+    "defense_results.json": "2104ce563a4646755aad08698feafd9c4ebb01c123c97707f7431edfe5728fc0",
+    "defense_results.md": "a466b17de1018112efd2f151189bd71844dcf136cb3aeccd2ba8c58820467602",
     "defense_ablations.json": "ea9cc440c3de719aeb809f335831111a3806c93be4b54b5a732c90f2590838c6",
-    "red_team.md": "ea61a2e0a3021b652ea5bf4afc2297ae19bb189a3c03da9f650cb3abf6d3605f",
+    "red_team.md": "32ceb6b8f2340258aeb98675e7f72f11e565331e1823f8df36e298163f45779a",
     "red_team_results.json": "24cef61cc50fbaaf2a683a6c6af6594ec8aba6fffbdbfe32a7cdbc81d6e5c3b1",
     "red_team_cases.json": "43bee572f0ef3bbe399e304e260fae51b9c605f32b009497da85b280e735c5cf",
     "defender_upgrade_results.json": "6c08d3969a56165646d4be5fbf74f5dff5e7545b61f551ac506cfedd8e3d324b",
@@ -16,14 +16,15 @@
     "red_team_round2_results.json": "0ccb7e2aa2e0e82838d04e692a9862eeed5dda8614413b55dde373f7cb8d6396",
     "red_team_round2.md": "3c15922fbc30a311f2e54ff3f09ff71ab91e0c1def185ef6dad9051ce4d9e445",
     "red_team_round2_cases.json": "e967e50474c51606d5b057adbcbb662132c29cbd47bd0ecfc2973637cf47f974",
-    "exam_results.json": "17f5066b80e2dbe53aca28f0ff01f13c55e6ae793c696189d4593477fa605969",
-    "exam_attempts.json": "2193800e6fd0568a7817177ab6925fcc455da5d653522cc771914f53b3d28c71",
-    "exam_verification.json": "029bc7ef71ae426edf37389da805659e9ad457dba8472846ae3731a611ee041b",
-    "usage_log.json": "cfe4f36622b0e0dfff743718bb4485de5123b5b8c278be7786379410a0c4edb5",
-    "audit_trail.json": "0458621c64521cfa92ec002d355dbe09db04e8b4b7498f5cda853a47e50f351b",
+    "exam_results.json": "d7ff86fd11297e8f1cf4b692adfe4e5d35922c9c081b79df32919859a399df62",
+    "exam_attempts.json": "b85fdc4c73ae84b82ff0d9d9b0fb095055c9e2f3bbed57eb0110ce60c96afbc8",
+    "exam_verification.json": "bc6bdb05a519fbd039e5c295f211e47173b8c7a00954d8c90c64611f05d700e0",
+    "audit_retest_results.json": "6bfd1c553675fdb1783f9037e05919286979430cea09713053bfe5fe12c74e0e",
+    "usage_log.json": "9871b41f792951af84b4875016ba1c4c0b8754458d196dfee2b357307704aed0",
+    "audit_trail.json": "0822e1e8f1cc2db9de9e6e0ff0b8af8646413df1f3653cefef60f30091f075a1",
     "trap_calls.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
   },
-  "verified_unique_runs": 128,
+  "verified_unique_runs": 132,
   "cache_savings_percent": "86.80474161486819714667815934",
   "cache_totals": {
     "with_caching": {
@@ -231,10 +232,10 @@
       ]
     }
   },
-  "exam_total_usd": "0.004609205",
+  "exam_total_usd": "0.005829955",
   "exam_entries": 10,
   "all_referenced_usage_recomputed": true,
   "new_model_calls": 0,
   "source_files_unchanged": true,
-  "html_sha256": "6f3c501a861adf90d6fafd7839cff234f8ae92cd1c5144a3e5cd3156cffb0c07"
+  "html_sha256": "1ee85a914755ee0d762867b6ac16a19ae5cbe6ae5edd1d3d9a3e790e55647223"
 }

@@ -1,6 +1,7 @@
 """Actual offline file:// browser validation in a directory containing only HTML."""
 import hashlib
 import json
+from decimal import Decimal
 from pathlib import Path
 import shutil
 import tempfile
@@ -51,14 +52,14 @@ def main():
                 assert 80 <= page.locator('#security').bounding_box()['y'] <= 130
                 checks['section_navigation_and_sticky_header_offset'] = True
                 page.locator('#exam-filter').select_option('review')
-                assert page.locator('#exam-body>tr:visible').count() == 2
-                assert '2 of 10' in page.locator('#exam-status').inner_text()
+                assert page.locator('#exam-body>tr:visible').count() == len(data['exam_reviews'])
+                assert f"{len(data['exam_reviews'])} of 10" in page.locator('#exam-status').inner_text()
                 page.locator('#exam-filter').select_option('recommend')
-                assert page.locator('#exam-body>tr:visible').count() == 4
+                assert page.locator('#exam-body>tr:visible').count() == sum(row['decision']=='recommend' for row in data['exam'])
                 page.locator('#exam-filter').select_option('all')
                 page.locator('#exam-search').fill('e08')
                 assert page.locator('#exam-body>tr:visible').count() == 1
-                assert 'Unknown' in page.locator('#exam-body>tr:visible').inner_text()
+                assert next(row['sku'] for row in data['exam'] if row['file']=='e08_email.eml') in page.locator('#exam-body>tr:visible').inner_text()
                 page.locator('#exam-search').fill('not-a-vendor')
                 assert page.locator('#exam-body>tr:visible').count() == 0
                 assert '0 of 10' in page.locator('#exam-status').inner_text()
@@ -75,7 +76,8 @@ def main():
                 assert page.locator('#monthly-cached').inner_text() == '$22.27'
                 page.locator('#volume').evaluate("element=>{element.value='1000';element.dispatchEvent(new Event('input',{bubbles:true}));}")
                 page.locator('#projection-source').select_option('final')
-                assert page.locator('#monthly-cached').inner_text() == '$13.83'
+                expected=Decimal(data['monthly_reference']['cached_average'])*30000
+                assert page.locator('#monthly-cached').inner_text() == f'${expected:.2f}'
                 assert page.locator('#monthly-zero').inner_text() == '$83.93'
                 assert 'no causal savings percentage' in page.locator('#projection-note').inner_text()
                 page.locator('#projection-source').select_option('baseline')

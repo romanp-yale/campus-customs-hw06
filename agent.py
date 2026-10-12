@@ -171,9 +171,10 @@ async def execute(doc: str, configuration: str = 'baseline', collected: list | N
                     raise RuntimeError('Requested cache configuration was not serialized correctly')
                 if configuration == 'without_caching' and 'prompt_cache_breakpoint' in json.dumps(payload):
                     raise RuntimeError('No-cache request cannot contain cache breakpoints')
-                # Distinct transport traces and forced refresh prevent response-cache replay.
-                request.headers['x-portkey-trace-id'] = str(uuid4())
-                request.headers['x-portkey-cache-force-refresh'] = 'True'
+            # Gateway response replay is distinct from provider prompt caching.
+            # Baseline evaluations also need a new inference, with no defenses added.
+            request.headers['x-portkey-trace-id'] = str(uuid4())
+            request.headers['x-portkey-cache-force-refresh'] = 'True'
 
         async def record_response(response):
             await response.aread()
@@ -188,7 +189,7 @@ async def execute(doc: str, configuration: str = 'baseline', collected: list | N
                             'portkey_cache_status': response.headers.get('x-portkey-cache-status'),
                             'request_cache_options': json.loads(response.request.content).get('prompt_cache_options'),
                             'request_prompt_cache_key': json.loads(response.request.content).get('prompt_cache_key'),
-                            'cache_force_refresh_requested': configuration != 'baseline'})
+                            'cache_force_refresh_requested': True})
 
         # Client targets only Portkey; no provider fallback or alternative model.
         transport = httpx2.AsyncClient(trust_env=False, timeout=60,

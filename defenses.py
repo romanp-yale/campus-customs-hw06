@@ -167,11 +167,11 @@ def validate_quote(path: Path, text: str) -> QuoteValidation:
     # Allow the existing baseline HTML reader's label/value concatenation as well.
     sku_pattern = r'^\s*(?:Campus Customs\s+)?SKU\s*:?\s*(CC-[A-Z]{2}-\d{3})\b'
     sku = value('sku', sku_pattern, str.upper) if re.search(sku_pattern, text, re.I | re.M) else value(
-        'sku', r'^\s*(?:Item\s*:[^\n]*?|Happy to quote[^\n]*?)\((CC-[A-Z]{2}-\d{3})\)', str.upper)
+        'sku', r'^\s*(?:Item\s*:[^\n]*?|Happy to quote[^\n]*?|Quote for[^\n]*?)\((CC-[A-Z]{2}-\d{3})\)', str.upper)
     facts = {'vendor': vendor, 'sku': sku,
-             'unit_price': value('unit_price', r'^\s*Unit price\s*:?\s*\$([0-9]+(?:\.[0-9]+)?)', float),
+             'unit_price': value('unit_price', r'^\s*Unit price\s*:?\s*\$((?:\d{1,3}(?:,\d{3})+|\d+)(?:\.\d+)?)(?![\w,.])', lambda value: float(value.replace(',', ''))),
              'lead_time_days': value('lead_time_days', r'^\s*Lead time\s*:?\s*(\d+)\s*(?:business\s+)?days', int),
-             'min_order': value('min_order', r'^\s*Minimum order\s*:?\s*(\d+)\s*units', int)}
+             'min_order': value('min_order', r'^\s*Minimum order\s*:?\s*((?:\d{1,3}(?:,\d{3})+)|\d+)\s*units', lambda value: int(value.replace(',', '')))}
     evidence['vendor'] = [{'value': vendor, 'source': 'Primary visible heading or email signature'}]
     if vendor is None:
         issues.append('vendor: no unambiguous primary heading/signature')

@@ -1,5 +1,5 @@
 {
-  "verified_at": "2026-10-12T20:32:04.268903+00:00",
+  "verified_at": "2026-10-12T23:20:44.457045+00:00",
   "files_processed": 10,
   "unique_entries": 10,
   "required_fields_and_types": true,
@@ -350,16 +350,16 @@
     },
     {
       "file": "e07_quote.pdf",
-      "final_run_id": "4dc1b67c-bb56-4194-8e60-2f97ab69c680",
+      "final_run_id": "b5ea9e5d-a230-41a9-a2a8-c56d08cd4456",
       "attempt_run_ids": [
-        "4dc1b67c-bb56-4194-8e60-2f97ab69c680"
+        "b5ea9e5d-a230-41a9-a2a8-c56d08cd4456"
       ],
       "response_ids": [
-        "resp_00d3f8edddba0889006acd43af730881909d73e7a2ab899580",
-        "resp_0e8c578ebed6d48b006acd43b177908190b080573e343a4a0d"
+        "resp_093a9a2cc297b37c006acd603e0d748197ad1750f13a5a21a6",
+        "resp_037ae447a1c1a232006acd604094e881909a672178cd1e9e92"
       ],
-      "cache_write_tokens": 241,
-      "cost_usd_exact": "0.000330855",
+      "cache_write_tokens": 10868,
+      "cost_usd_exact": "0.00155448",
       "source_validation": {
         "evidence": {
           "sku": [
@@ -383,7 +383,13 @@
               "source": "Lead time: 14 business days"
             }
           ],
-          "min_order": [],
+          "min_order": [
+            {
+              "value": 1000,
+              "line": 6,
+              "source": "Minimum order: 1,000 units"
+            }
+          ],
           "vendor": [
             {
               "value": "Long Wharf Knitting",
@@ -391,29 +397,33 @@
             }
           ]
         },
-        "issues": [
-          "min_order: no usable primary label"
-        ],
-        "needs_human_review": true
+        "issues": [],
+        "needs_human_review": false
       },
       "trap_calls": [],
       "trap_attempts_in_audit": []
     },
     {
       "file": "e08_email.eml",
-      "final_run_id": "899d5958-121d-4c5f-a805-4a53757528fd",
+      "final_run_id": "7245f3cd-ea7f-49ba-9567-1197e0435158",
       "attempt_run_ids": [
-        "899d5958-121d-4c5f-a805-4a53757528fd"
+        "7245f3cd-ea7f-49ba-9567-1197e0435158"
       ],
       "response_ids": [
-        "resp_0d7abcdf9d8719d6006acd43b48d488197be9303f1ff7f2d51",
-        "resp_0fad838a6cee9d43006acd43b6c380819393d8900eefe9b811"
+        "resp_0a5c19111802823e006acd6043a4788197b7c21356c8c4d92b",
+        "resp_0263f37a56573427006acd6049d20481959485666863107301"
       ],
-      "cache_write_tokens": 270,
-      "cost_usd_exact": "0.00034599",
+      "cache_write_tokens": 275,
+      "cost_usd_exact": "0.000343115",
       "source_validation": {
         "evidence": {
-          "sku": [],
+          "sku": [
+            {
+              "value": "CC-PG-004",
+              "line": 7,
+              "source": "Quote for Mini Pennant (CC-PG-004)"
+            }
+          ],
           "unit_price": [
             {
               "value": 5.46,
@@ -442,10 +452,8 @@
             }
           ]
         },
-        "issues": [
-          "sku: no usable primary label"
-        ],
-        "needs_human_review": true
+        "issues": [],
+        "needs_human_review": false
       },
       "trap_calls": [],
       "trap_attempts_in_audit": []
@@ -561,5 +569,16 @@
       "trap_attempts_in_audit": []
     }
   ],
-  "final_json_sha256": "17f5066b80e2dbe53aca28f0ff01f13c55e6ae793c696189d4593477fa605969"
+  "reuse_method": "Exact prepared document, source-anchor and policy equivalence; same model/tool/prompt architecture.",
+  "reused_run_ids": [
+    "d0472a0e-2d7a-4469-8647-d746c2ed1129",
+    "fa82b018-a1c8-4ee8-b3c0-568daf48bdc4",
+    "fdb9aec7-482b-43be-be90-a3ab06bfe6ea",
+    "8aa28f51-8a30-4eaf-ace5-75178b6b240d",
+    "fb1c15eb-4a81-42a4-8ee8-b9655abb9dbd",
+    "6530d9ae-2ce7-48b2-87ba-3d091d6cf35c",
+    "22489a61-bec0-4ef1-b52e-f9528104d527",
+    "33bb8272-c5c8-442c-be4a-7709bca1d5f2"
+  ],
+  "final_json_sha256": "d7ff86fd11297e8f1cf4b692adfe4e5d35922c9c081b79df32919859a399df62"
 }

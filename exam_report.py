@@ -63,8 +63,10 @@ def main():
              'equality with unedited audit responses, raw-usage cost arithmetic, and trap logs. The final JSON hash matches the verification record. '
              'Agent source, prompts, pricing, handbook, and exam files are unchanged; previous log prefixes and historical result files are preserved.', '',
              'There is no exam answer key. No expected answers were invented, and no hidden-key accuracy claim is made. '
-             'The known CSS-generated-content limitation identified in Problem 7 remains a limitation of this final defender; '
-             'the exam process did not disable protections or modify the agent to improve apparent outcomes.', '',
+             'The audit repaired primary-field parsing and specific CSS clipping/generated-text cases without disabling protections. '
+             'Two changed exam tool inputs were rerun; eight prior actual results were reused only after exact document-input, '
+             'source-fact and policy-output equivalence was verified. The previous exam and report bytes are preserved in audit_snapshot/. '
+             'The broader PDF/HTML visibility and supplier-authentication limitations still require human oversight.', '',
              'Artifacts: [exam_results.json](exam_results.json), [exam_verification.json](exam_verification.json), '
              '[exam_attempts.json](exam_attempts.json). Existing usage_log.json retains call-level usage, response IDs, and costs; '
              'audit_trail.json retains tool calls/results and final responses.', '',

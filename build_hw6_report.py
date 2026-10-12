@@ -14,7 +14,7 @@ SOURCE_NAMES = ('handbook_estimate.md', 'cache_test.json', 'cache_test.md', 'att
                 'defense_results.json', 'defense_results.md', 'defense_ablations.json', 'red_team.md',
                 'red_team_results.json', 'red_team_cases.json', 'defender_upgrade_results.json', 'defender_upgrade.md',
                 'red_team_round2_results.json', 'red_team_round2.md', 'red_team_round2_cases.json',
-                'exam_results.json', 'exam_attempts.json', 'exam_verification.json', 'usage_log.json', 'audit_trail.json', 'trap_calls.json')
+                'exam_results.json', 'exam_attempts.json', 'exam_verification.json', 'audit_retest_results.json', 'usage_log.json', 'audit_trail.json', 'trap_calls.json')
 
 
 def load(name):
@@ -151,6 +151,11 @@ def reconcile():
     final_zero = sum((Decimal(row['cost_usd']) for row in upgrade['documents']), Decimal(0)) / 14
     exam_total = sum((Decimal(str(row['cost_usd'])) for row in exams), Decimal(0))
     final_cached = exam_total / 10
+    audit=load('audit_retest_results.json')
+    assert audit['new_run_count']==6 and len(audit['attack_runs'])==4
+    for run in audit['new_runs']:
+        verify(run)
+    assert sum((Decimal(run['cost_usd']) for run in audit['new_runs']),Decimal(0))==Decimal(audit['new_cost_usd'])
     assert sum(len(run['api_responses']) for run in exam_attempts['attempts']) == 20
     assert not any(event['run_id'] in verified_runs for event in load('trap_calls.json'))
     assert not any(event['run_id'] in verified_runs and event.get('event') == 'tool_call'
@@ -161,7 +166,7 @@ def reconcile():
             'red_team': [*original['runs'], *round2['runs']], 'original_cases': load('red_team_cases.json')['cases'],
             'round2_cases': load('red_team_round2_cases.json')['cases'], 'upgrade': upgrade['documents'],
             'monthly_reference': {'cached_average': str(final_cached), 'zero_reuse_average': str(final_zero)},
-            'verified_runs': verified_runs}
+            'audit_repair': audit, 'verified_runs': verified_runs}
 
 
 def cache_chart(cache):
@@ -219,7 +224,7 @@ def main():
         attacks += f'<article class="attack-card"><div class="eyebrow">{"First round · pre-upgrade" if filename.startswith(("rt01","rt02")) else "Second round · upgraded defender"}</div><h3>{titles[filename]}</h3><code>{filename}</code><p>{descriptions[filename][0]}</p><p class="muted">{escape(case["mechanism"])}</p>{results}<p class="finding">{descriptions[filename][1]}</p>{image}</article>'
     source_rows = ''.join(f'<tr><td><code>{escape(name)}</code></td><td><code class="hash">{digest}</code></td></tr>' for name,digest in d['sources'].items())
     # Embed only normalized evidence, not executable vendor HTML or secrets.
-    bundle = {k:v for k,v in d.items() if k not in ('red_team','original_cases','round2_cases','upgrade')}
+    bundle = {k:v for k,v in d.items() if k not in ('red_team','original_cases','round2_cases','upgrade','audit_repair')}
     payload = json.dumps(bundle, ensure_ascii=False).replace('<', '\\u003c').replace('>', '\\u003e').replace('&', '\\u0026')
     template = (ROOT / 'report_template.html').read_text(encoding='utf-8')
     substitutions = {'__CACHE_CHART__': cache_chart(d['cache']), '__SECURITY_CHART__': security_chart(d['practice_metrics']),
@@ -229,6 +234,12 @@ def main():
                      '__EFFECT_ROWS__': effects, '__PRACTICE_ROWS__': practice, '__EXAM_ROWS__': exams, '__ATTACK_CARDS__': attacks,
                      '__EXAM_COST__': money(d['exam_total']), '__SOURCE_ROWS__': source_rows, '__DATA__': payload,
                      '__VERIFIED_RUNS__': str(len(d['verified_runs']))}
+    repairs=d['audit_repair']
+    substitutions.update({'__REVIEW_COUNT__':str(len(d['exam_reviews'])),
+                          '__RECOMMEND__':str(sum(r['decision']=='recommend' for r in d['exam'])),
+                          '__DECLINE__':str(sum(r['decision']=='do_not_recommend' for r in d['exam'])),
+                          '__AUDIT_ATTACK_MATCHES__':str(sum(r['all_fields_correct'] for r in repairs['attack_runs'])),
+                          '__AUDIT_UPDATE__':f'<div class="note"><b>Subsequent strict audit: specific failures repaired.</b> Four new fully defended attack runs extracted every authored field and decision correctly, with no trap calls. CSS clipping and the supported opaque generated-price mask are now handled. Two changed exam inputs were rerun; eight prior actual outputs were reused after exact input/fact/policy equivalence. The six new runs cost {money(repairs["new_cost_usd"])}. Historical failures above remain preserved; this is a limited retest, not a universal prevention claim.</div>'})
     for key,value in substitutions.items():
         template = template.replace(key,value)
     assert '__DATA__' not in template

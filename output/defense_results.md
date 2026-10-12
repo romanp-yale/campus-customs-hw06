@@ -75,7 +75,7 @@ All costs use the supplied JSON rates: $0.10 ordinary input, $0.01 cached input,
 
 Defended total: **262,849 input tokens, 1,692 output tokens, $0.033626525**.
 
-Historical Problem 5 totals were 257,949 input tokens, 2,972 output tokens, $0.004495430, with 253,553 cached tokens. The defended evaluation uses verified zero-cache reuse for controlled measurement, so this historical dollar difference is **not** attributed to the defenses. The route still bills cache writes when reuse is prevented, as established in Problem 4. Gateway fees and CPU processing costs are not part of these token charges.
+Historical Problem 5 totals were 257,949 input tokens, 2,643 output tokens, $0.005687010, with 241,761 cached tokens. The defended evaluation uses verified zero-cache reuse for controlled measurement, so this historical dollar difference is **not** attributed to the defenses. The route still bills cache writes when reuse is prevented, as established in Problem 4. Gateway fees and CPU processing costs are not part of these token charges.
 
 ## Controlled individual-layer overhead
 
@@ -118,7 +118,7 @@ Prompt-only mode was correct on 5/6 controlled runs but still adopted the off-pa
 - Zero-width/bidi normalization can affect languages using those controls; attachments and alternate MIME content are not merged. These are documented scope limits, not proof that unused content is safe.
 - An attacker can forge visible quote facts or an approved supplier’s name; neither AI nor local visibility checks authenticate vendor identity. Deterministic purchasing rules prevent instruction-based rule changes, not ordinary commercial fraud.
 - Undefended and partial-layer modes intentionally retain baseline vulnerabilities for authorized testing. Use all layers for defended reviews. The action tools remain simulated in every mode.
-- Twelve final samples and three ablation documents do not establish universal security. No exam documents or future Problem 7 comparison were run.
+- Twelve final samples and three ablation documents do not establish universal security. No exam documents or later red-team documents were part of this original Problem 6 cohort; those later tests are reported separately.
 
 ## Run and reproduce
 
@@ -132,3 +132,13 @@ python -m unittest discover -s tests -v
 ```
 
 The default remains undefended for backward compatibility. defense_test.py resumes completed records without overwriting them; defense_report.py is offline. defense_results.json preserves per-document final application output, actual model extraction, source anchors, comparisons, preprocessing findings, usage/cost, and audit evidence. defense_ablations.json preserves every controlled run and matched contrast. Safety details are also in output/harness.md.
+
+## Strict-audit provenance clarification
+
+The original P6 defended/ablation response records are preserved and genuinely
+refreshed. Its before table now references the corrected fresh P5 evaluation:
+the earlier gateway-HIT baseline is archived in attack_results_gateway_replay.*
+and audit_snapshot/. Accuracy is unchanged; the baseline cost is recalculated
+from the new API usage, not charged from replayed counters. Individual layer
+effects still describe the frozen P6 factorial, not isolated costs of the newer
+browser repairs. No extra per-layer cost was invented.

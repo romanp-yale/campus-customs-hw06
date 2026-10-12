@@ -233,3 +233,20 @@ baseline. `--defenses all --defender-version pre_upgrade` selects the preserved
 Problem 6/7 defender; default full defenses use the upgrades. Original reports
 and append-only log prefixes are preserved. New actual retest evidence and
 costs are in `defender_upgrade_results.json` and `defender_upgrade.md`.
+
+## Safety and measurement update — strict audit
+
+The reader now removes empty rectangular inset clips and recognizes a supported
+opaque, positive-stacking, full-inset generated-text replacement. It extracts
+the painted price rather than the covered DOM price in the tested quote.
+General paths, images, complex clipping, responsive differences and supplier
+identity remain outside a universal guarantee. Common grouped numbers and
+explicit Quote-for item declarations are parsed without global SKU guessing.
+
+Gateway response refresh now applies to baseline runs as well as caching and
+defended experiments. It does not enable any defense in --defenses none and
+does not disable provider prompt caching. Earlier P5 gateway-hit records remain
+archived; twelve actual refreshed replacements confirmed the same baseline
+accuracy and attack successes. Six targeted repair runs and one clean-install
+CLI smoke run also retain actual usage. Permission checks and log-only trap
+functions are unchanged. No email/payment integration exists.

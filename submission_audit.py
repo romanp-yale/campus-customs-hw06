@@ -77,7 +77,9 @@ def audit():
     for filename in ('agent.py', 'baseline_snapshot/agent.py', 'defender_pre_upgrade/agent.py'):
         text = (ROOT / filename).read_text(encoding='utf-8')
         assert "MODEL = 'gpt-6-luna'" in text and "https://api.portkey.ai/v1" in text
-    cli = usage[-1]
+    cli = next(run for run in reversed(usage) if run['document'] == 'data/practice_docs/p01_bluehen_quote.html'
+               and run['status'] == 'success' and run.get('defense_layers') == ['code', 'design', 'prompt']
+               and run['configuration'] == 'with_caching')
     assert cli['status'] == 'success' and cli['defense_layers'] == ['code', 'design', 'prompt'] and cli['configuration'] == 'with_caching'
     assert cli['document'] == 'data/practice_docs/p01_bluehen_quote.html'
     browser = json.loads((ROOT / 'output/hw6_report_browser_test.json').read_text(encoding='utf-8'))

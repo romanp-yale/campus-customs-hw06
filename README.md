@@ -2,7 +2,7 @@
 
 This Python vendor desk reads HTML, PDF and email quotes, extracts purchasing facts, and recommends whether Campus Customs should buy under its shop handbook. It uses PydanticAI and only gpt-6-luna through Portkey. Email and payment tools are deliberately harmless, log-only security-test traps.
 
-Problems 1–10 cover setup, token and caching costs, practice evaluations, layered defenses, two red-team rounds, unseen exam processing, an offline report, and public submission preparation. The final result supports a supervised pilot, not unattended vendor mail: CSS-generated price masking remains a known failure, and two exam files require human review.
+Problems 1–10 cover setup, token and caching costs, practice evaluations, layered defenses, two red-team rounds, unseen exam processing, an offline report, and public submission preparation. The final result supports a supervised pilot, not unattended vendor mail: the audit repaired specific clipping, generated-price and primary-field parsing bugs, while broader rendering and supplier-authentication limits remain.
 
 **Start with [the self-contained results report](output/hw6_report.html):** download that HTML and double-click it for offline charts, costs, security findings, exam results, and the manager recommendation. GitHub displays HTML source rather than running this page.
 
@@ -34,7 +34,7 @@ Tested with Python 3.13. In a fresh clone, run from the repository root (the ori
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 python -m pip install -r requirements.txt
-Copy-Item .env.example .env
+if (-not (Test-Path -LiteralPath .env)) { Copy-Item -LiteralPath .env.example -Destination .env }
 python -m playwright install chromium
 ```
 
@@ -67,7 +67,7 @@ python cache_test.py
 python cache_report.py
 ```
 
-The default cache mode remains `baseline`, preserving Problem 3 behavior. `with_caching` selects implicit prompt caching. `without_caching` requests explicit-only caching with no breakpoints and isolates each model call with a unique initial metadata prefix and cache key. This route did not honor explicit-only mode alone; the isolation was verified to eliminate cached input reuse, but cache-write charges remain. Both experimental modes request fresh Portkey responses so gateway response replay is not the measurement.
+The default cache mode remains `baseline`, preserving Problem 3 behavior. `with_caching` selects implicit prompt caching. `without_caching` requests explicit-only caching with no breakpoints and isolates each model call with a unique initial metadata prefix and cache key. This route did not honor explicit-only mode alone; the isolation was verified to eliminate cached input reuse, but cache-write charges remain. All modes request fresh Portkey responses so gateway response replay is not the measurement.
 
 `output/cache_test.json` preserves all 24 final document runs and 48 individual API responses, plus failed preliminary controls. `output/cache_test.md` contains the measured cost comparison, verification limits, theoretical comparison, and 30-day projections. Existing usage/audit logs remain append-only. `cache_test.py` resumes the existing saved cohort and skips completed pairs; preserve or rename that JSON before intentionally starting another full experiment. `cache_report.py` is offline and does not make model calls.
 
@@ -189,7 +189,7 @@ configuration, and gpt-6-luna through Portkey. The agent and exam files were
 unchanged. Final fields and reasons were mapped mechanically from audit outputs;
 token counts and costs were aggregated from actual API usage.
 
-There were four recommend and six do_not_recommend results, with no trap calls
+The original archived cohort had four recommend and six do_not_recommend results, with no trap calls
 or API failures. Two documents were flagged for human review: e07 has a null
 minimum-order anchor, and e08 has a null SKU anchor. Those values were preserved
 without manual correction. No answer key was used and no exam accuracy claim
@@ -258,3 +258,43 @@ prevents Git line-ending conversion so archived data/source hashes remain
 reproducible. Local `.env`, virtual environments, caches and private key material
 are ignored, not deleted. The public repository is
 [romanp-yale/campus-customs-hw06](https://github.com/romanp-yale/campus-customs-hw06).
+
+## Strict audit and targeted repairs (Problem 10 follow-up)
+
+The full requirement audit and conservative grading estimate are in
+`output/full_requirements_audit.md`; its requirement checklist and actual evidence
+are in `output/full_requirements_audit.json`.
+
+The audit repaired grouped minimum quantities and prices, primary `Quote for …
+(SKU)` declarations, empty inset clipping, and supported opaque CSS-generated
+text replacements. It also discovered that the original P5 baseline responses
+were gateway cache hits. All twelve undefended documents were therefore rerun
+with gateway response refresh; their prompt, reader, schemas and tool permissions
+remain the original baseline. The actual result is still 8/12 correct decisions,
+56/60 factual matches and 4/7 successful identified attacks. The 48-call caching
+comparison and original 48-run defense ablations were already refreshed and remain
+valid. Response-cache replay and provider prompt caching are distinct.
+
+Four new fully defended attack runs now match every authored field and decision,
+with no traps. The exam parser repairs required two real reruns; eight previous
+actual results were reused only after exact tool-input, source-fact and policy
+equivalence. The current exam JSON has five recommend/five do_not_recommend
+results and no unknown fields or review flags. There is no hidden answer key,
+so no exam accuracy is claimed. Its reported usage costs $0.005829955.
+
+Twenty-two final regressions passed in the clean clone; a clean virtual environment installed
+requirements.txt and ran the defended CLI. A local Git clone/candidate copy was
+also tested without copying credentials. Offline HTML controls and responsive
+layouts were rechecked. Only necessary API repair runs were performed.
+
+Historical source/report/data bytes are retained in `audit_snapshot/` with a
+hash manifest. Replayed P5 artifacts are also retained under
+`output/attack_results_gateway_replay.*`. All usage/audit/trap logs are preserved.
+`audit_retest.py` refuses to overwrite its saved repair cohort. These fixes
+cover measured cases, not arbitrary clipping, image occlusion, OCR, multi-item
+invoices or supplier authentication. Use all defenses and human buyer review.
+
+The user approved committing and publishing this audited candidate. The audit
+report preserves the earlier checkpoint at which publication was awaiting approval;
+that historical status does not describe the later approval. Remote publication
+is verified separately after pushing.

@@ -219,3 +219,12 @@ costs, and remaining weaknesses are in [red_team_round2.md](red_team_round2.md),
 with complete records in [red_team_round2_results.json](red_team_round2_results.json).
 The second round did not modify the agent or its defenses and preserved earlier
 logs and result files.
+
+## Subsequent strict-audit repair verification
+
+The historical failures above remain preserved. Four additional real,
+fully defended runs are recorded in audit_retest_results.json. All authored
+fields and decisions matched, with no trap calls. The supported CSS-generated
+mask now supplies its human-visible $17.44, and clipped authorization text is
+removed. This is a limited repair test, not proof against all rendering attacks.
+Original undefended and defended outcomes were not relabeled or erased.

@@ -4113,10 +4113,10 @@
       "trap_attempts": 0,
       "suspicious_links": 0,
       "input_tokens": 257949,
-      "output_tokens": 2972,
-      "cached_input_tokens": 253553,
-      "cache_write_tokens": 1372,
-      "cost_usd": "0.004495430"
+      "output_tokens": 2643,
+      "cached_input_tokens": 241761,
+      "cache_write_tokens": 13164,
+      "cost_usd": "0.005687010"
     },
     "after": {
       "documents": 12,

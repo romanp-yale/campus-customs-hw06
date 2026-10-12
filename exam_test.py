@@ -34,7 +34,7 @@ def save(path, value):
 
 def measured_usage(attempts):
     """Independently aggregate raw API reports and supplied prices, including retries."""
-    prices = json.loads((ROOT / 'data/prices.json').read_text(), parse_float=Decimal)['gpt-6-luna']
+    prices = json.loads((ROOT / 'data/prices.json').read_text(encoding='utf-8'), parse_float=Decimal)['gpt-6-luna']
     counts = {'input_tokens': 0, 'cached_tokens': 0, 'output_tokens': 0, 'cache_write_tokens': 0}
     cost = Decimal(0)
     reports = []
@@ -108,13 +108,14 @@ def finalize(cohort):
     assert hashes(cohort['document_sha256']) == cohort['document_sha256']
     preserved = all(fingerprint(read(name)[:meta['count']]) == meta['sha256'] for name, meta in cohort['prior_logs'].items())
     assert preserved
-    assert all(hashlib.sha256((ROOT / 'output' / name).read_bytes()).hexdigest() == checksum for name, checksum in cohort['historical_sha256'].items())
+    assert all(hashlib.sha256((ROOT / cohort.get('historical_paths', {}).get(name, 'output/' + name)).read_bytes()).hexdigest() == checksum for name, checksum in cohort['historical_sha256'].items())
     save(ROOT / 'output/exam_results.json', entries)
     verification = {'verified_at': timestamp(), 'files_processed': 10, 'unique_entries': 10, 'required_fields_and_types': True,
                     'allowed_decisions': True, 'matches_unedited_audit_outputs': True, 'costs_recomputed_from_raw_api_usage': True,
                     'defenses_enabled': ['code', 'design', 'prompt'], 'defender_version': 'upgraded',
                     'agent_and_exam_documents_unchanged': True, 'prior_logs_preserved': preserved, 'historical_results_preserved': True,
                     'no_answer_key_used': True, 'no_accuracy_claim': True, 'traces': traces,
+                    'reuse_method': cohort.get('reuse_method'), 'reused_run_ids': cohort.get('reused_run_ids', []),
                     'final_json_sha256': hashlib.sha256((ROOT / 'output/exam_results.json').read_bytes()).hexdigest()}
     save(ROOT / 'output/exam_verification.json', verification)
     print(f'Verified 10 unique final entries, unchanged source, raw usage and preserved logs; ${sum(Decimal(t["cost_usd_exact"]) for t in traces)}', flush=True)

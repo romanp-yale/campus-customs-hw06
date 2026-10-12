@@ -1,0 +1,29 @@
+{
+  "html_sha256": "6f3c501a861adf90d6fafd7839cff234f8ae92cd1c5144a3e5cd3156cffb0c07",
+  "isolated_directory_only_html": true,
+  "browser": "Headless Edge/Chromium",
+  "network_offline": true,
+  "external_resource_requests": [],
+  "javascript_errors": [],
+  "checks": {
+    "initial_content_charts_tables": true,
+    "section_navigation_and_sticky_header_offset": true,
+    "exam_filters_and_empty_search": true,
+    "decision_reason_expansion": true,
+    "projection_volume_and_cohort_controls": true,
+    "json_download_matches_unedited_exam_results": true,
+    "print_control_wiring": true,
+    "embedded_rendering_preview": true,
+    "responsive_page_no_horizontal_overflow": [
+      1440,
+      1280,
+      1024,
+      768,
+      640
+    ],
+    "print_styles": true,
+    "static_report_without_javascript": true
+  },
+  "screenshots": "output\\hw6_report_previews",
+  "visual_inspection": "Desktop and compact overview, charts, overhead table, attack cards and exam rows were visually inspected in Problem 9; the refreshed submission report retains that layout. Offline controls and responsive widths passed again. Print dialog was stubbed, not physically printed."
+}

@@ -1,0 +1,1431 @@
+{
+  "checked_at": "2026-10-12T23:27:33.342868+00:00",
+  "scores": [
+    {
+      "problem": 1,
+      "title": "AI Prompts",
+      "max_points": 5,
+      "estimated_points": 5,
+      "status": "PASS",
+      "issues": "Actual original/follow-up prompts present; supplied attachment verified byte-for-byte."
+    },
+    {
+      "problem": 2,
+      "title": "Handbook Estimate",
+      "max_points": 6,
+      "estimated_points": 6,
+      "status": "PASS",
+      "issues": "10,069 o200k_base tokens reproduced; explicitly a model-tokenizer estimate."
+    },
+    {
+      "problem": 3,
+      "title": "Agent",
+      "max_points": 12,
+      "estimated_points": 12,
+      "status": "PASS",
+      "issues": "Real refreshed p01/p08 evidence, three formats, fixed model/full-book hook, structured output and logs."
+    },
+    {
+      "problem": 4,
+      "title": "Caching",
+      "max_points": 16,
+      "estimated_points": 16,
+      "status": "PASS",
+      "issues": "48 unique refreshed responses; zero cached reads in every no-reuse call; writes separately priced."
+    },
+    {
+      "problem": 5,
+      "title": "Attacks",
+      "max_points": 8,
+      "estimated_points": 8,
+      "status": "PASS",
+      "issues": "Repaired replay contamination; 12 fresh baseline runs still show four of seven attacks succeeding."
+    },
+    {
+      "problem": 6,
+      "title": "Defenses",
+      "max_points": 16,
+      "estimated_points": 15,
+      "status": "PARTIAL",
+      "issues": "Three layers and actual P6 ablations verified; later repairs not separately isolated; visibility remains heuristic."
+    },
+    {
+      "problem": 7,
+      "title": "Red Team",
+      "max_points": 8,
+      "estimated_points": 8,
+      "status": "PASS",
+      "issues": "Exactly two original attacks plus two explicitly requested follow-ups; historical failures and four repaired live outcomes preserved."
+    },
+    {
+      "problem": 8,
+      "title": "Exam",
+      "max_points": 12,
+      "estimated_points": 12,
+      "status": "PASS",
+      "issues": "10 unique typed entries; two genuine repairs, eight proven-equivalent reused outputs; no hidden-key accuracy claim."
+    },
+    {
+      "problem": 9,
+      "title": "HTML Report",
+      "max_points": 12,
+      "estimated_points": 11,
+      "status": "PASS",
+      "issues": "Offline charts/table/controls verified; screen-reader and independent browser-engine/physical-print checks not performed."
+    },
+    {
+      "problem": 10,
+      "title": "GitHub",
+      "max_points": 5,
+      "estimated_points": 4,
+      "status": "PARTIAL",
+      "issues": "Existing repository public; local audit changes intentionally await explicit push approval."
+    }
+  ],
+  "estimated_total": 97,
+  "requirements": [
+    {
+      "phase": "## PHASE 1 \u2014 PROJECT STRUCTURE AND FILE AUDIT",
+      "problem": null,
+      "requirement": "All 12 practice documents exist.",
+      "status": "PASS",
+      "evidence": "File inventory, source inspection, SHA-256 archives, raw usage reconciliation, tests and the findings described below.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 1 \u2014 PROJECT STRUCTURE AND FILE AUDIT",
+      "problem": null,
+      "requirement": "All 10 exam documents exist.",
+      "status": "PASS",
+      "evidence": "File inventory, source inspection, SHA-256 archives, raw usage reconciliation, tests and the findings described below.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 1 \u2014 PROJECT STRUCTURE AND FILE AUDIT",
+      "problem": null,
+      "requirement": "Both original red-team attack documents exist.",
+      "status": "PASS",
+      "evidence": "File inventory, source inspection, SHA-256 archives, raw usage reconciliation, tests and the findings described below.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 1 \u2014 PROJECT STRUCTURE AND FILE AUDIT",
+      "problem": null,
+      "requirement": "All required output JSON files contain valid JSON with the appropriate structure.",
+      "status": "PASS",
+      "evidence": "File inventory, source inspection, SHA-256 archives, raw usage reconciliation, tests and the findings described below.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 1 \u2014 PROJECT STRUCTURE AND FILE AUDIT",
+      "problem": null,
+      "requirement": "All Markdown reports contain the requested analysis, not merely placeholder headings.",
+      "status": "PASS",
+      "evidence": "File inventory, source inspection, SHA-256 archives, raw usage reconciliation, tests and the findings described below.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 1 \u2014 PROJECT STRUCTURE AND FILE AUDIT",
+      "problem": null,
+      "requirement": "All files are stored in the correct directories.",
+      "status": "PASS",
+      "evidence": "File inventory, source inspection, SHA-256 archives, raw usage reconciliation, tests and the findings described below.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 1 \u2014 PROJECT STRUCTURE AND FILE AUDIT",
+      "problem": null,
+      "requirement": "Dependencies in `requirements.txt` are sufficient for a fresh installation.",
+      "status": "PASS",
+      "evidence": "File inventory, source inspection, SHA-256 archives, raw usage reconciliation, tests and the findings described below.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 1 \u2014 PROJECT STRUCTURE AND FILE AUDIT",
+      "problem": null,
+      "requirement": "All paths work when running the project from its root directory.",
+      "status": "PASS",
+      "evidence": "File inventory, source inspection, SHA-256 archives, raw usage reconciliation, tests and the findings described below.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 1,
+      "requirement": "There is a separate section for each problem, 1\u201310.",
+      "status": "PASS",
+      "evidence": "AI_prompts.md; original attachment byte inclusion and original Git prefix preservation.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 1,
+      "requirement": "Every section includes the problem number and title.",
+      "status": "PASS",
+      "evidence": "AI_prompts.md; original attachment byte inclusion and original Git prefix preservation.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 1,
+      "requirement": "Every section includes at least one actual prompt I entered.",
+      "status": "PASS",
+      "evidence": "AI_prompts.md; original attachment byte inclusion and original Git prefix preservation.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 1,
+      "requirement": "Follow-up prompts and explanations are included where applicable.",
+      "status": "PASS",
+      "evidence": "AI_prompts.md; original attachment byte inclusion and original Git prefix preservation.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 1,
+      "requirement": "The file accurately records the development process.",
+      "status": "PASS",
+      "evidence": "AI_prompts.md; original attachment byte inclusion and original Git prefix preservation.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 2,
+      "requirement": "Handbook token count is accurately calculated or measured.",
+      "status": "PASS",
+      "evidence": "src/estimate_handbook.py; supplied prices; independently reproduced exact encoding count and arithmetic.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 2,
+      "requirement": "The counting method is explained.",
+      "status": "PASS",
+      "evidence": "src/estimate_handbook.py; supplied prices; independently reproduced exact encoding count and arithmetic.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 2,
+      "requirement": "Pricing uses the actual `gpt-6-luna` rates in `prices.json`.",
+      "status": "PASS",
+      "evidence": "src/estimate_handbook.py; supplied prices; independently reproduced exact encoding count and arithmetic.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 2,
+      "requirement": "Costs are provided for 1 call and 1,000 calls.",
+      "status": "PASS",
+      "evidence": "src/estimate_handbook.py; supplied prices; independently reproduced exact encoding count and arithmetic.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 2,
+      "requirement": "Both cached and uncached costs are calculated.",
+      "status": "PASS",
+      "evidence": "src/estimate_handbook.py; supplied prices; independently reproduced exact encoding count and arithmetic.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 2,
+      "requirement": "The math is shown explicitly.",
+      "status": "PASS",
+      "evidence": "src/estimate_handbook.py; supplied prices; independently reproduced exact encoding count and arithmetic.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 2,
+      "requirement": "Units and dollar amounts are correct.",
+      "status": "PASS",
+      "evidence": "src/estimate_handbook.py; supplied prices; independently reproduced exact encoding count and arithmetic.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 2,
+      "requirement": "Any estimated tokenizer counts are clearly distinguished from measured API usage.",
+      "status": "PASS",
+      "evidence": "src/estimate_handbook.py; supplied prices; independently reproduced exact encoding count and arithmetic.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 3,
+      "requirement": "The agent uses PydanticAI.",
+      "status": "PASS",
+      "evidence": "agent.py, tools.py, models.py, harness.md; 22 regressions; fresh-install CLI; fresh p01/p08 and API/audit records.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 3,
+      "requirement": "Every AI call uses `gpt-6-luna` through the intended Portkey configuration.",
+      "status": "PASS",
+      "evidence": "agent.py, tools.py, models.py, harness.md; 22 regressions; fresh-install CLI; fresh p01/p08 and API/audit records.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 3,
+      "requirement": "The agent accepts a document path through `--doc`.",
+      "status": "PASS",
+      "evidence": "agent.py, tools.py, models.py, harness.md; 22 regressions; fresh-install CLI; fresh p01/p08 and API/audit records.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 3,
+      "requirement": "HTML, PDF, and `.eml` files can all be read using a tool.",
+      "status": "PASS",
+      "evidence": "agent.py, tools.py, models.py, harness.md; 22 regressions; fresh-install CLI; fresh p01/p08 and API/audit records.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 3,
+      "requirement": "The complete handbook is included in every applicable model call.",
+      "status": "PASS",
+      "evidence": "agent.py, tools.py, models.py, harness.md; 22 regressions; fresh-install CLI; fresh p01/p08 and API/audit records.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 3,
+      "requirement": "The agent extracts vendor, SKU, unit price, lead time in days, and minimum order.",
+      "status": "PASS",
+      "evidence": "agent.py, tools.py, models.py, harness.md; 22 regressions; fresh-install CLI; fresh p01/p08 and API/audit records.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 3,
+      "requirement": "The agent returns only valid decisions: `recommend` or `do_not_recommend`.",
+      "status": "PASS",
+      "evidence": "agent.py, tools.py, models.py, harness.md; 22 regressions; fresh-install CLI; fresh p01/p08 and API/audit records.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 3,
+      "requirement": "Its decision follows the handbook rules.",
+      "status": "PASS",
+      "evidence": "agent.py, tools.py, models.py, harness.md; 22 regressions; fresh-install CLI; fresh p01/p08 and API/audit records.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 3,
+      "requirement": "The reason is one sentence and relates to the decision.",
+      "status": "PASS",
+      "evidence": "agent.py, tools.py, models.py, harness.md; 22 regressions; fresh-install CLI; fresh p01/p08 and API/audit records.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 3,
+      "requirement": "Structured output follows the Pydantic models.",
+      "status": "PASS",
+      "evidence": "agent.py, tools.py, models.py, harness.md; 22 regressions; fresh-install CLI; fresh p01/p08 and API/audit records.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 3,
+      "requirement": "`send_email` and `approve_payment` remain present.",
+      "status": "PASS",
+      "evidence": "agent.py, tools.py, models.py, harness.md; 22 regressions; fresh-install CLI; fresh p01/p08 and API/audit records.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 3,
+      "requirement": "Both trap tools only log calls to `output/trap_calls.json`.",
+      "status": "PASS",
+      "evidence": "agent.py, tools.py, models.py, harness.md; 22 regressions; fresh-install CLI; fresh p01/p08 and API/audit records.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 3,
+      "requirement": "`output/usage_log.json` records document, timestamp, API-reported token usage, and calculated cost.",
+      "status": "PASS",
+      "evidence": "agent.py, tools.py, models.py, harness.md; 22 regressions; fresh-install CLI; fresh p01/p08 and API/audit records.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 3,
+      "requirement": "`output/audit_trail.json` records tool calls, arguments, short results, and the final answer.",
+      "status": "PASS",
+      "evidence": "agent.py, tools.py, models.py, harness.md; 22 regressions; fresh-install CLI; fresh p01/p08 and API/audit records.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 3,
+      "requirement": "Logs append rather than incorrectly overwrite earlier runs.",
+      "status": "PASS",
+      "evidence": "agent.py, tools.py, models.py, harness.md; 22 regressions; fresh-install CLI; fresh p01/p08 and API/audit records.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 3,
+      "requirement": "p01 and p08 have successful execution evidence.",
+      "status": "PASS",
+      "evidence": "agent.py, tools.py, models.py, harness.md; 22 regressions; fresh-install CLI; fresh p01/p08 and API/audit records.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 3,
+      "requirement": "`output/harness.md` explains each model field and tool.",
+      "status": "PASS",
+      "evidence": "agent.py, tools.py, models.py, harness.md; 22 regressions; fresh-install CLI; fresh p01/p08 and API/audit records.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 4,
+      "requirement": "All 12 practice documents were tested with caching.",
+      "status": "PASS",
+      "evidence": "cache_test.json: 24 runs/48 unique REFRESH responses; Decimal recomputation; zero-read/write partition checks.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 4,
+      "requirement": "All 12 were tested without caching.",
+      "status": "PASS",
+      "evidence": "cache_test.json: 24 runs/48 unique REFRESH responses; Decimal recomputation; zero-read/write partition checks.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 4,
+      "requirement": "All model calls for these tests are recorded, including retries if any.",
+      "status": "PASS",
+      "evidence": "cache_test.json: 24 runs/48 unique REFRESH responses; Decimal recomputation; zero-read/write partition checks.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 4,
+      "requirement": "Actual API-reported input, cached, and output token counts are present.",
+      "status": "PASS",
+      "evidence": "cache_test.json: 24 runs/48 unique REFRESH responses; Decimal recomputation; zero-read/write partition checks.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 4,
+      "requirement": "Cached mode genuinely uses the cache.",
+      "status": "PASS",
+      "evidence": "cache_test.json: 24 runs/48 unique REFRESH responses; Decimal recomputation; zero-read/write partition checks.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 4,
+      "requirement": "Uncached mode reports ZERO cached tokens for every call.",
+      "status": "PASS",
+      "evidence": "cache_test.json: 24 runs/48 unique REFRESH responses; Decimal recomputation; zero-read/write partition checks.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 4,
+      "requirement": "Costs are calculated using the correct cached and uncached rates.",
+      "status": "PASS",
+      "evidence": "cache_test.json: 24 runs/48 unique REFRESH responses; Decimal recomputation; zero-read/write partition checks.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 4,
+      "requirement": "Total cost per setup is correct.",
+      "status": "PASS",
+      "evidence": "cache_test.json: 24 runs/48 unique REFRESH responses; Decimal recomputation; zero-read/write partition checks.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 4,
+      "requirement": "Average cost per document is correct.",
+      "status": "PASS",
+      "evidence": "cache_test.json: 24 runs/48 unique REFRESH responses; Decimal recomputation; zero-read/write partition checks.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 4,
+      "requirement": "Percentage savings is correct.",
+      "status": "PASS",
+      "evidence": "cache_test.json: 24 runs/48 unique REFRESH responses; Decimal recomputation; zero-read/write partition checks.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 4,
+      "requirement": "Problem 2 estimates are compared against actual results.",
+      "status": "PASS",
+      "evidence": "cache_test.json: 24 runs/48 unique REFRESH responses; Decimal recomputation; zero-read/write partition checks.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 4,
+      "requirement": "The 1,000-documents-per-day \u00d7 30-day projections are correct.",
+      "status": "PASS",
+      "evidence": "cache_test.json: 24 runs/48 unique REFRESH responses; Decimal recomputation; zero-read/write partition checks.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 4,
+      "requirement": "Surprising results are explained using evidence.",
+      "status": "PASS",
+      "evidence": "cache_test.json: 24 runs/48 unique REFRESH responses; Decimal recomputation; zero-read/write partition checks.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 5,
+      "requirement": "All 12 documents were tested on the original undefended agent.",
+      "status": "PASS",
+      "evidence": "Fresh attack_results.json: 12 comparisons, individually matched fields/decisions, trap/audit records, original rendering/source findings.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 5,
+      "requirement": "Extracted fields were compared against `practice_key.json`.",
+      "status": "PASS",
+      "evidence": "Fresh attack_results.json: 12 comparisons, individually matched fields/decisions, trap/audit records, original rendering/source findings.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 5,
+      "requirement": "Every field match is recorded individually.",
+      "status": "PASS",
+      "evidence": "Fresh attack_results.json: 12 comparisons, individually matched fields/decisions, trap/audit records, original rendering/source findings.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 5,
+      "requirement": "Decision match is recorded separately.",
+      "status": "PASS",
+      "evidence": "Fresh attack_results.json: 12 comparisons, individually matched fields/decisions, trap/audit records, original rendering/source findings.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 5,
+      "requirement": "Trap tool calls are accurately identified.",
+      "status": "PASS",
+      "evidence": "Fresh attack_results.json: 12 comparisons, individually matched fields/decisions, trap/audit records, original rendering/source findings.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 5,
+      "requirement": "Suspicious URLs, links, or unusual text in the answers are detected.",
+      "status": "PASS",
+      "evidence": "Fresh attack_results.json: 12 comparisons, individually matched fields/decisions, trap/audit records, original rendering/source findings.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 5,
+      "requirement": "Every compromised document is discussed.",
+      "status": "PASS",
+      "evidence": "Fresh attack_results.json: 12 comparisons, individually matched fields/decisions, trap/audit records, original rendering/source findings.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 5,
+      "requirement": "Each explanation identifies the attack's actual hiding location.",
+      "status": "PASS",
+      "evidence": "Fresh attack_results.json: 12 comparisons, individually matched fields/decisions, trap/audit records, original rendering/source findings.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 5,
+      "requirement": "The report compares human-visible document contents with what the agent read.",
+      "status": "PASS",
+      "evidence": "Fresh attack_results.json: 12 comparisons, individually matched fields/decisions, trap/audit records, original rendering/source findings.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 6,
+      "requirement": "Trap tools still exist and have not been removed.",
+      "status": "PASS",
+      "evidence": "defense_results.json + defense_ablations.json: 12 full runs and 48 factorial runs; prepare hook, exact one-shot guard and handbook policy.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 6,
+      "requirement": "Both defended and undefended modes remain runnable.",
+      "status": "PASS",
+      "evidence": "defense_results.json + defense_ablations.json: 12 full runs and 48 factorial runs; prepare hook, exact one-shot guard and handbook policy.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 6,
+      "requirement": "All 12 practice documents were rerun with defenses.",
+      "status": "PASS",
+      "evidence": "defense_results.json + defense_ablations.json: 12 full runs and 48 factorial runs; prepare hook, exact one-shot guard and handbook policy.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 6,
+      "requirement": "All fields and decisions are compared against the answer key.",
+      "status": "PASS",
+      "evidence": "defense_results.json + defense_ablations.json: 12 full runs and 48 factorial runs; prepare hook, exact one-shot guard and handbook policy.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 6,
+      "requirement": "Clean quotes still produce correct results.",
+      "status": "PASS",
+      "evidence": "defense_results.json + defense_ablations.json: 12 full runs and 48 factorial runs; prepare hook, exact one-shot guard and handbook policy.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 6,
+      "requirement": "Security does not rely on simply refusing all documents.",
+      "status": "PASS",
+      "evidence": "defense_results.json + defense_ablations.json: 12 full runs and 48 factorial runs; prepare hook, exact one-shot guard and handbook policy.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 6,
+      "requirement": "Token and dollar cost are recorded for each defended run.",
+      "status": "PASS",
+      "evidence": "defense_results.json + defense_ablations.json: 12 full runs and 48 factorial runs; prepare hook, exact one-shot guard and handbook policy.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 6,
+      "requirement": "The report contains a before-and-after comparison for all 12 documents.",
+      "status": "PASS",
+      "evidence": "defense_results.json + defense_ablations.json: 12 full runs and 48 factorial runs; prepare hook, exact one-shot guard and handbook policy.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 6,
+      "requirement": "The unique role of each defense layer is explained.",
+      "status": "QUALIFIED",
+      "evidence": "defense_results.json + defense_ablations.json: 12 full runs and 48 factorial runs; prepare hook, exact one-shot guard and handbook policy.",
+      "limitation": "Verified for the documented scope; model behavior/visibility are not universally guaranteed, and new per-layer overhead is not separately measured."
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 6,
+      "requirement": "Additional tokens and dollars per document are quantified for each layer, using actual attributable measurements wherever possible.",
+      "status": "QUALIFIED",
+      "evidence": "defense_results.json + defense_ablations.json: 12 full runs and 48 factorial runs; prepare hook, exact one-shot guard and handbook policy.",
+      "limitation": "Verified for the documented scope; model behavior/visibility are not universally guaranteed, and new per-layer overhead is not separately measured."
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 6,
+      "requirement": "The Safety section explains all layers clearly.",
+      "status": "PASS",
+      "evidence": "defense_results.json + defense_ablations.json: 12 full runs and 48 factorial runs; prepare hook, exact one-shot guard and handbook policy.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 7,
+      "requirement": "There are exactly two original attack files.",
+      "status": "PASS",
+      "evidence": "red_team_cases/results, round2_cases/results and audit_retest_results; four original runs and four latest defended repairs.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 7,
+      "requirement": "Each uses HTML, PDF, or email format.",
+      "status": "PASS",
+      "evidence": "red_team_cases/results, round2_cases/results and audit_retest_results; four original runs and four latest defended repairs.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 7,
+      "requirement": "Both look like plausible normal vendor quotes to a human.",
+      "status": "PASS",
+      "evidence": "red_team_cases/results, round2_cases/results and audit_retest_results; four original runs and four latest defended repairs.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 7,
+      "requirement": "Both contain a distinct hidden attack technique or objective not found in the practice set.",
+      "status": "PASS",
+      "evidence": "red_team_cases/results, round2_cases/results and audit_retest_results; four original runs and four latest defended repairs.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 7,
+      "requirement": "Both were run against the undefended agent.",
+      "status": "PASS",
+      "evidence": "red_team_cases/results, round2_cases/results and audit_retest_results; four original runs and four latest defended repairs.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 7,
+      "requirement": "Both were run against the defended agent.",
+      "status": "PASS",
+      "evidence": "red_team_cases/results, round2_cases/results and audit_retest_results; four original runs and four latest defended repairs.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 7,
+      "requirement": "Actual results before and after defenses are described.",
+      "status": "PASS",
+      "evidence": "red_team_cases/results, round2_cases/results and audit_retest_results; four original runs and four latest defended repairs.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 7,
+      "requirement": "Trap tool outcomes and any answer manipulation are accurately reported.",
+      "status": "PASS",
+      "evidence": "red_team_cases/results, round2_cases/results and audit_retest_results; four original runs and four latest defended repairs.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 8,
+      "requirement": "Exactly 10 entries exist.",
+      "status": "PASS",
+      "evidence": "exam_results/attempts/verification; 10 unique entries; raw call cost equality; unchanged audit outputs; eight equivalence checks.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 8,
+      "requirement": "Each matches a real exam document.",
+      "status": "PASS",
+      "evidence": "exam_results/attempts/verification; 10 unique entries; raw call cost equality; unchanged audit outputs; eight equivalence checks.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 8,
+      "requirement": "No exam document is duplicated or omitted.",
+      "status": "PASS",
+      "evidence": "exam_results/attempts/verification; 10 unique entries; raw call cost equality; unchanged audit outputs; eight equivalence checks.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 8,
+      "requirement": "Every entry contains exactly the required information:",
+      "status": "PASS",
+      "evidence": "exam_results/attempts/verification; 10 unique entries; raw call cost equality; unchanged audit outputs; eight equivalence checks.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 8,
+      "requirement": "Results came from the final defended agent.",
+      "status": "PASS",
+      "evidence": "exam_results/attempts/verification; 10 unique entries; raw call cost equality; unchanged audit outputs; eight equivalence checks.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 8,
+      "requirement": "Values are correctly typed.",
+      "status": "PASS",
+      "evidence": "exam_results/attempts/verification; 10 unique entries; raw call cost equality; unchanged audit outputs; eight equivalence checks.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 8,
+      "requirement": "Decisions are valid.",
+      "status": "PASS",
+      "evidence": "exam_results/attempts/verification; 10 unique entries; raw call cost equality; unchanged audit outputs; eight equivalence checks.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 8,
+      "requirement": "Costs match the usage logs and pricing.",
+      "status": "PASS",
+      "evidence": "exam_results/attempts/verification; 10 unique entries; raw call cost equality; unchanged audit outputs; eight equivalence checks.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 8,
+      "requirement": "`trap_tool_called` reflects actual tool logs, not an assumed false value.",
+      "status": "PASS",
+      "evidence": "exam_results/attempts/verification; 10 unique entries; raw call cost equality; unchanged audit outputs; eight equivalence checks.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 8,
+      "requirement": "The exam results were not manually edited.",
+      "status": "PASS",
+      "evidence": "exam_results/attempts/verification; 10 unique entries; raw call cost equality; unchanged audit outputs; eight equivalence checks.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 9,
+      "requirement": "It opens locally without internet access.",
+      "status": "PASS",
+      "evidence": "hw6_report.html and browser_test; isolated single-file offline test; all chart/export/filter/projection checks; hashes/math reconciled.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 9,
+      "requirement": "All CSS, JavaScript, chart data, and other required assets are embedded.",
+      "status": "PASS",
+      "evidence": "hw6_report.html and browser_test; isolated single-file offline test; all chart/export/filter/projection checks; hashes/math reconciled.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 9,
+      "requirement": "No CDN links, remote fonts, remote scripts, or external image dependencies are required.",
+      "status": "PASS",
+      "evidence": "hw6_report.html and browser_test; isolated single-file offline test; all chart/export/filter/projection checks; hashes/math reconciled.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 9,
+      "requirement": "It displays actual caching results, including a working chart.",
+      "status": "PASS",
+      "evidence": "hw6_report.html and browser_test; isolated single-file offline test; all chart/export/filter/projection checks; hashes/math reconciled.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 9,
+      "requirement": "It compares attacks before and after defenses.",
+      "status": "PASS",
+      "evidence": "hw6_report.html and browser_test; isolated single-file offline test; all chart/export/filter/projection checks; hashes/math reconciled.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 9,
+      "requirement": "It displays defense token and dollar overhead.",
+      "status": "PASS",
+      "evidence": "hw6_report.html and browser_test; isolated single-file offline test; all chart/export/filter/projection checks; hashes/math reconciled.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 9,
+      "requirement": "It displays all 10 exam results.",
+      "status": "PASS",
+      "evidence": "hw6_report.html and browser_test; isolated single-file offline test; all chart/export/filter/projection checks; hashes/math reconciled.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 9,
+      "requirement": "It discusses both red-team attacks.",
+      "status": "PASS",
+      "evidence": "hw6_report.html and browser_test; isolated single-file offline test; all chart/export/filter/projection checks; hashes/math reconciled.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 9,
+      "requirement": "It includes a recommendation for the store manager.",
+      "status": "PASS",
+      "evidence": "hw6_report.html and browser_test; isolated single-file offline test; all chart/export/filter/projection checks; hashes/math reconciled.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 9,
+      "requirement": "It states the projected monthly cost at 1,000 documents daily.",
+      "status": "PASS",
+      "evidence": "hw6_report.html and browser_test; isolated single-file offline test; all chart/export/filter/projection checks; hashes/math reconciled.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 9,
+      "requirement": "Every metric agrees with its source JSON or Markdown file.",
+      "status": "PASS",
+      "evidence": "hw6_report.html and browser_test; isolated single-file offline test; all chart/export/filter/projection checks; hashes/math reconciled.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 9,
+      "requirement": "Layout, readability, accessibility, and visual quality are appropriate for a polished submission.",
+      "status": "PASS",
+      "evidence": "hw6_report.html and browser_test; isolated single-file offline test; all chart/export/filter/projection checks; hashes/math reconciled.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 10,
+      "requirement": "The project is under Git version control.",
+      "status": "PASS",
+      "evidence": "submission_audit.py checks; Git initial history and ignore rules; public metadata and anonymous HTTP 200; update pending approval.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 10,
+      "requirement": "`.gitignore` excludes `.env`, credentials, secret files, and appropriate generated clutter.",
+      "status": "PASS",
+      "evidence": "submission_audit.py checks; Git initial history and ignore rules; public metadata and anonymous HTTP 200; update pending approval.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 10,
+      "requirement": "`.env.example` contains only placeholder values.",
+      "status": "PASS",
+      "evidence": "submission_audit.py checks; Git initial history and ignore rules; public metadata and anonymous HTTP 200; update pending approval.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 10,
+      "requirement": "`README.md` contains clear setup and run instructions.",
+      "status": "PASS",
+      "evidence": "submission_audit.py checks; Git initial history and ignore rules; public metadata and anonymous HTTP 200; update pending approval.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 10,
+      "requirement": "`requirements.txt` supports a clean installation.",
+      "status": "PASS",
+      "evidence": "submission_audit.py checks; Git initial history and ignore rules; public metadata and anonymous HTTP 200; update pending approval.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 10,
+      "requirement": "The complete required data directory is included.",
+      "status": "PASS",
+      "evidence": "submission_audit.py checks; Git initial history and ignore rules; public metadata and anonymous HTTP 200; update pending approval.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 10,
+      "requirement": "All required source and output files are tracked or ready to commit.",
+      "status": "PASS",
+      "evidence": "submission_audit.py checks; Git initial history and ignore rules; public metadata and anonymous HTTP 200; update pending approval.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 10,
+      "requirement": "No secrets appear in tracked files or Git history.",
+      "status": "PASS",
+      "evidence": "submission_audit.py checks; Git initial history and ignore rules; public metadata and anonymous HTTP 200; update pending approval.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 10,
+      "requirement": "No hardcoded API keys appear in the codebase.",
+      "status": "PASS",
+      "evidence": "submission_audit.py checks; Git initial history and ignore rules; public metadata and anonymous HTTP 200; update pending approval.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 10,
+      "requirement": "The documented command runs in a clean environment when appropriately configured.",
+      "status": "PASS",
+      "evidence": "submission_audit.py checks; Git initial history and ignore rules; public metadata and anonymous HTTP 200; update pending approval.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 10,
+      "requirement": "The remote GitHub repository is public, if one already exists.",
+      "status": "PASS",
+      "evidence": "submission_audit.py checks; Git initial history and ignore rules; public metadata and anonymous HTTP 200; update pending approval.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 2 \u2014 CHECK ALL 10 PROBLEMS INDIVIDUALLY",
+      "problem": 10,
+      "requirement": "The remote URL is correct, if configured.",
+      "status": "PASS",
+      "evidence": "submission_audit.py checks; Git initial history and ignore rules; public metadata and anonymous HTTP 200; update pending approval.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 3 \u2014 CROSS-CHECK THE ENTIRE PROJECT",
+      "problem": null,
+      "requirement": "All price calculations use the same price schedule.",
+      "status": "PASS",
+      "evidence": "File inventory, source inspection, SHA-256 archives, raw usage reconciliation, tests and the findings described below.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 3 \u2014 CROSS-CHECK THE ENTIRE PROJECT",
+      "problem": null,
+      "requirement": "All token counts are taken from real API usage where required.",
+      "status": "PASS",
+      "evidence": "File inventory, source inspection, SHA-256 archives, raw usage reconciliation, tests and the findings described below.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 3 \u2014 CROSS-CHECK THE ENTIRE PROJECT",
+      "problem": null,
+      "requirement": "Every model invocation, including retries or validation calls, is included in applicable cost accounting.",
+      "status": "PASS",
+      "evidence": "File inventory, source inspection, SHA-256 archives, raw usage reconciliation, tests and the findings described below.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 3 \u2014 CROSS-CHECK THE ENTIRE PROJECT",
+      "problem": null,
+      "requirement": "Cached tokens are not double-charged as uncached tokens.",
+      "status": "PASS",
+      "evidence": "File inventory, source inspection, SHA-256 archives, raw usage reconciliation, tests and the findings described below.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 3 \u2014 CROSS-CHECK THE ENTIRE PROJECT",
+      "problem": null,
+      "requirement": "Experiment configurations match their labels.",
+      "status": "PASS",
+      "evidence": "File inventory, source inspection, SHA-256 archives, raw usage reconciliation, tests and the findings described below.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 3 \u2014 CROSS-CHECK THE ENTIRE PROJECT",
+      "problem": null,
+      "requirement": "All input documents correspond to the intended experiment.",
+      "status": "PASS",
+      "evidence": "File inventory, source inspection, SHA-256 archives, raw usage reconciliation, tests and the findings described below.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 3 \u2014 CROSS-CHECK THE ENTIRE PROJECT",
+      "problem": null,
+      "requirement": "Practice accuracy calculations match the answer key.",
+      "status": "PASS",
+      "evidence": "File inventory, source inspection, SHA-256 archives, raw usage reconciliation, tests and the findings described below.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 3 \u2014 CROSS-CHECK THE ENTIRE PROJECT",
+      "problem": null,
+      "requirement": "Defense results are not accidentally copied from attack results.",
+      "status": "PASS",
+      "evidence": "File inventory, source inspection, SHA-256 archives, raw usage reconciliation, tests and the findings described below.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 3 \u2014 CROSS-CHECK THE ENTIRE PROJECT",
+      "problem": null,
+      "requirement": "Red-team reports match actual execution records.",
+      "status": "PASS",
+      "evidence": "File inventory, source inspection, SHA-256 archives, raw usage reconciliation, tests and the findings described below.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 3 \u2014 CROSS-CHECK THE ENTIRE PROJECT",
+      "problem": null,
+      "requirement": "Exam results match final defended runs.",
+      "status": "PASS",
+      "evidence": "File inventory, source inspection, SHA-256 archives, raw usage reconciliation, tests and the findings described below.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 3 \u2014 CROSS-CHECK THE ENTIRE PROJECT",
+      "problem": null,
+      "requirement": "The HTML report contains the same metrics as the underlying data.",
+      "status": "PASS",
+      "evidence": "File inventory, source inspection, SHA-256 archives, raw usage reconciliation, tests and the findings described below.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 3 \u2014 CROSS-CHECK THE ENTIRE PROJECT",
+      "problem": null,
+      "requirement": "Running the agent again does not destroy previous logs.",
+      "status": "PASS",
+      "evidence": "File inventory, source inspection, SHA-256 archives, raw usage reconciliation, tests and the findings described below.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 3 \u2014 CROSS-CHECK THE ENTIRE PROJECT",
+      "problem": null,
+      "requirement": "Running with defenses off does not silently activate any new defenses.",
+      "status": "PASS",
+      "evidence": "File inventory, source inspection, SHA-256 archives, raw usage reconciliation, tests and the findings described below.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 3 \u2014 CROSS-CHECK THE ENTIRE PROJECT",
+      "problem": null,
+      "requirement": "No untrusted vendor document can directly authorize email sending or payment.",
+      "status": "PASS",
+      "evidence": "File inventory, source inspection, SHA-256 archives, raw usage reconciliation, tests and the findings described below.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 3 \u2014 CROSS-CHECK THE ENTIRE PROJECT",
+      "problem": null,
+      "requirement": "All file paths are handled safely, and malicious document text cannot override system or developer instructions.",
+      "status": "QUALIFIED",
+      "evidence": "File inventory, source inspection, SHA-256 archives, raw usage reconciliation, tests and the findings described below.",
+      "limitation": "Verified for the documented scope; model behavior/visibility are not universally guaranteed, and new per-layer overhead is not separately measured."
+    },
+    {
+      "phase": "## PHASE 3 \u2014 CROSS-CHECK THE ENTIRE PROJECT",
+      "problem": null,
+      "requirement": "The code contains no silent fallback to another model.",
+      "status": "PASS",
+      "evidence": "File inventory, source inspection, SHA-256 archives, raw usage reconciliation, tests and the findings described below.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 3 \u2014 CROSS-CHECK THE ENTIRE PROJECT",
+      "problem": null,
+      "requirement": "The project can be reproduced from a fresh Git clone.",
+      "status": "QUALIFIED",
+      "evidence": "File inventory, source inspection, SHA-256 archives, raw usage reconciliation, tests and the findings described below.",
+      "limitation": "Verified for the documented scope; model behavior/visibility are not universally guaranteed, and new per-layer overhead is not separately measured."
+    },
+    {
+      "phase": "## PHASE 4 \u2014 FIX AND REVERIFY",
+      "problem": null,
+      "requirement": "Fix straightforward code, configuration, documentation, validation, and reporting problems.",
+      "status": "PASS",
+      "evidence": "File inventory, source inspection, SHA-256 archives, raw usage reconciliation, tests and the findings described below.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 4 \u2014 FIX AND REVERIFY",
+      "problem": null,
+      "requirement": "Preserve legitimate data, historical run records, and original attack evidence.",
+      "status": "PASS",
+      "evidence": "File inventory, source inspection, SHA-256 archives, raw usage reconciliation, tests and the findings described below.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 4 \u2014 FIX AND REVERIFY",
+      "problem": null,
+      "requirement": "Regenerate dependent reports from verified results when needed.",
+      "status": "PASS",
+      "evidence": "File inventory, source inspection, SHA-256 archives, raw usage reconciliation, tests and the findings described below.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 4 \u2014 FIX AND REVERIFY",
+      "problem": null,
+      "requirement": "Rerun only the necessary tests.",
+      "status": "PASS",
+      "evidence": "File inventory, source inspection, SHA-256 archives, raw usage reconciliation, tests and the findings described below.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 4 \u2014 FIX AND REVERIFY",
+      "problem": null,
+      "requirement": "If live API access is unavailable, report the missing verification instead of claiming a successful run.",
+      "status": "PASS",
+      "evidence": "File inventory, source inspection, SHA-256 archives, raw usage reconciliation, tests and the findings described below.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 4 \u2014 FIX AND REVERIFY",
+      "problem": null,
+      "requirement": "If correcting an issue requires significant API spending, explain the cost and request approval before triggering that expenditure.",
+      "status": "PASS",
+      "evidence": "File inventory, source inspection, SHA-256 archives, raw usage reconciliation, tests and the findings described below.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 4 \u2014 FIX AND REVERIFY",
+      "problem": null,
+      "requirement": "Never fabricate a passing result to fill a missing requirement.",
+      "status": "PASS",
+      "evidence": "File inventory, source inspection, SHA-256 archives, raw usage reconciliation, tests and the findings described below.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 4 \u2014 FIX AND REVERIFY",
+      "problem": null,
+      "requirement": "Do not alter the handbook, practice answer key, or exam documents to make tests pass.",
+      "status": "PASS",
+      "evidence": "File inventory, source inspection, SHA-256 archives, raw usage reconciliation, tests and the findings described below.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 4 \u2014 FIX AND REVERIFY",
+      "problem": null,
+      "requirement": "Do not change prices or usage counts merely to improve reported savings.",
+      "status": "PASS",
+      "evidence": "File inventory, source inspection, SHA-256 archives, raw usage reconciliation, tests and the findings described below.",
+      "limitation": ""
+    },
+    {
+      "phase": "## PHASE 4 \u2014 FIX AND REVERIFY",
+      "problem": null,
+      "requirement": "Verify every fix after applying it.",
+      "status": "PASS",
+      "evidence": "File inventory, source inspection, SHA-256 archives, raw usage reconciliation, tests and the findings described below.",
+      "limitation": ""
+    }
+  ],
+  "original_attachment_sha256": "f4ec6c54a1e1982eb636f64bb2966ef2ca38f541c67ca7c458d2e1e54d488e78",
+  "supplied_data_byte_verified": [
+    "data/exam_docs/e01_quote.html",
+    "data/exam_docs/e02_quote.html",
+    "data/exam_docs/e03_quote.html",
+    "data/exam_docs/e04_catalog.html",
+    "data/exam_docs/e05_quote.pdf",
+    "data/exam_docs/e06_quote.pdf",
+    "data/exam_docs/e07_quote.pdf",
+    "data/exam_docs/e08_email.eml",
+    "data/exam_docs/e09_email.eml",
+    "data/exam_docs/e10_email.eml",
+    "data/practice_docs/p01_bluehen_quote.html",
+    "data/practice_docs/p02_elmcity_quote.html",
+    "data/practice_docs/p03_ivyprint_catalog.html",
+    "data/practice_docs/p04_harborstitch_quote.html",
+    "data/practice_docs/p05_maplemills_quote.pdf",
+    "data/practice_docs/p06_qtextile_quote.pdf",
+    "data/practice_docs/p07_longwharf_quote.pdf",
+    "data/practice_docs/p08_chapelst_email.eml",
+    "data/practice_docs/p09_westville_email.eml",
+    "data/practice_docs/p10_eastrock_email.eml",
+    "data/practice_docs/p11_yorkst_quote.html",
+    "data/practice_docs/p12_bluehen_quote.pdf",
+    "data/practice_key.json",
+    "data/prices.json",
+    "data/shop_handbook.md"
+  ],
+  "snapshot_hashes_verified": true,
+  "baseline_gateway_statuses": [
+    "REFRESH",
+    "REFRESH",
+    "REFRESH",
+    "REFRESH",
+    "REFRESH",
+    "REFRESH",
+    "REFRESH",
+    "REFRESH",
+    "REFRESH",
+    "REFRESH",
+    "REFRESH",
+    "REFRESH",
+    "REFRESH",
+    "REFRESH",
+    "REFRESH",
+    "REFRESH",
+    "REFRESH",
+    "REFRESH",
+    "REFRESH",
+    "REFRESH",
+    "REFRESH",
+    "REFRESH",
+    "REFRESH",
+    "REFRESH"
+  ],
+  "baseline_unique_response_ids": 24,
+  "report_verified_run_ids": [
+    "3d51e654-0e89-4dfa-83da-558793fc4207",
+    "0098fe8a-1428-4ede-bdef-eae8f0026ed7",
+    "926b204b-73fc-4c11-b6f1-306545da9443",
+    "36c1ea41-8c9a-455f-a54d-359c679e2eb1",
+    "04e890bf-b8a2-44e5-bfab-3916fb0762c1",
+    "aa6bcebd-51a5-420c-bb87-b000f313f64f",
+    "8a370bb7-fd63-4186-8888-94f7fb8ca5d4",
+    "beca0a85-baad-48ea-b6a7-24987b482559",
+    "f77759fd-c137-4d38-8ef8-7f573a09495c",
+    "ddb6487e-bc80-418d-90c2-1a6b2079643d",
+    "184eddf7-a9bc-4da5-bbee-db408ff0a6c8",
+    "147e1b97-9dda-4268-a43c-13617e673b51",
+    "9d93f64b-e19f-47cc-9639-0c6268a7b0b8",
+    "ff2f82d1-6034-432a-98bd-c56287a1b8a1",
+    "66b0d91c-7f80-4fce-ac7b-fd5af77dfe62",
+    "ab8c1814-c805-4e0a-816b-2f6566d6d1c2",
+    "a9a18631-d94a-4e96-a30c-05051177a7fb",
+    "2a00e01a-6662-4fce-b414-63994fe6b6e5",
+    "527f0c32-7677-4274-91d3-f783841e37af",
+    "f21c8f24-22f1-4cc3-a75f-80e55ad53867",
+    "e15bfabd-4de1-4a8e-96c5-3f19e8f2a88a",
+    "bf806daf-1bb5-40f1-b373-b77758986cc5",
+    "775c45b4-7c29-4a0c-978f-39f6d8a9303e",
+    "ae65bd46-04b6-4b08-b0f8-81cd6c748307",
+    "2babeeed-d482-4395-9858-7127b22bb59f",
+    "a6827d5a-19db-4275-a92b-324ffea5ecfc",
+    "4f81b779-18c5-437e-80a8-e5cca580d3cc",
+    "2940b5ef-685f-4791-b927-e45b1fa57b95",
+    "70a7af97-8eaa-476c-aff5-8bcb5220367d",
+    "38d18b89-fd9e-457b-ab5a-5ddbbfcf6d74",
+    "b08892b0-743e-4ee1-ab08-c0d7762a0aef",
+    "66a49d1d-4b11-4f1d-a984-ccc60c49c0ce",
+    "5de40e4f-95e9-4b0b-99a0-cea2da5caa4f",
+    "537104bd-e5e4-474a-8e2f-6bde00d5d24d",
+    "1f621ef5-0da5-46ec-88cd-657a041910ff",
+    "e735993b-8161-44f4-812a-ad415fb9053c",
+    "5ed74947-3f41-41a6-834a-86cf52bc7a5b",
+    "c9362172-4bbd-42b2-b13b-64dbbe6c4da4",
+    "bb17a220-16b1-4851-92a1-83ec834240f1",
+    "aab863a8-a87d-418e-87f6-23699b2ce462",
+    "99ffa908-9c24-40e7-8fcb-d9bdef3b3800",
+    "e15061e7-5522-49ea-8f22-507283eb5885",
+    "b2b6e462-10b9-4804-99f1-0e5f5f9633d5",
+    "aaf7ef2a-2e19-42b2-992f-896790c96705",
+    "64f99d8e-a068-4a1b-b1f0-01c5f337c8c9",
+    "3461dad2-a2d4-4256-87e8-186a784aebe0",
+    "9c41123e-aaff-40e2-b6ef-b0da1ad212b7",
+    "7621efc0-b6a1-4185-9ce1-c45939dcf50e",
+    "2aab2df7-44d2-4044-bbbc-2db61fa77108",
+    "3ef3f1b9-4c22-4c97-8922-2ab84f9c03ad",
+    "cef68d51-aa8e-477a-a5f1-02d38769a913",
+    "3d190bac-6ea6-42a1-a93c-8bb9558f8e2c",
+    "e51b7c64-b22e-4aa9-898e-e4e2a3130624",
+    "3f2e6835-ffef-4261-9972-d7a8b522deef",
+    "441a6dbc-d576-4d74-9a5a-b31ae4d339e6",
+    "9a9e01a9-178b-4ced-9619-c2930337a3b1",
+    "0b736094-90a1-4bd5-94a4-0f019dffa5e7",
+    "69a58c25-7e0f-49cc-adad-bd674bd19a52",
+    "0ea3fbc9-71aa-46d1-86d7-cd600f193462",
+    "c376d190-bdfe-4062-9ef7-04880c40b139",
+    "d131e443-6abf-40a9-85df-f637b245c0f0",
+    "17cb5b6d-e386-42df-9d91-86087680af48",
+    "c420efd1-7a26-4cc4-91cb-0d9e8fe6351a",
+    "011b538d-6f44-49ae-b138-5b80921ac6b1",
+    "a677ad5b-7a99-4368-9bb9-5ab1371e52f7",
+    "7cb7d394-6566-4445-9d2a-b879268b4488",
+    "ce3fedc0-9673-41cc-88b1-c65432f4111c",
+    "fb2334db-862b-4b75-aa80-ba7e9d07a1ad",
+    "6a6d4a07-ecd6-4fc7-86db-7f447ef42feb",
+    "675fa14f-004a-4a61-a19c-342923b84ea3",
+    "2c8d45bd-894d-4216-8bf5-fdf572e3e4d8",
+    "35c16fac-95d1-4b77-81c6-b3597ac8abe4",
+    "19a49ace-ab9e-456b-99e2-bf1be33a6070",
+    "05b619d9-2be7-42ec-8602-2446c99bbb6c",
+    "88fcff5b-73d5-4db4-afa7-880ccbc5b505",
+    "7fc755ec-424c-4696-9efc-ee7a73fdfc9b",
+    "79392389-a122-4d10-9d1b-274c0f5a520c",
+    "edfa0351-97dd-4501-8eaf-5826c136e138",
+    "43ecaf27-1114-4627-96c0-9e293282049a",
+    "8a16dd03-74ea-4a4f-936e-3208a30cae97",
+    "a357c2a9-b9e0-4f3c-98cf-4b909b73f76c",
+    "6fa7289f-cb77-405d-840f-26ff44fdb808",
+    "21dc50c1-eaf2-4f66-a906-8de259eb932e",
+    "4d7643dc-925a-48d7-935b-401fe684920f",
+    "3179a408-36dd-44a4-b420-43eda96c11ff",
+    "9c373a85-d76f-4da3-820d-d50078f5e939",
+    "2951ae59-b990-4e0e-aa36-a1e70dc7000a",
+    "a98978d9-13ee-4ad9-ba11-125a44b1acba",
+    "abcc32eb-7ef5-47be-b373-2315d2d056e7",
+    "82ee28e8-98d8-4d50-bf94-d4838df81a53",
+    "989c5431-2631-4553-ab8b-acfc87cde47d",
+    "6a2acd39-21a5-4c65-ad28-5429df6f877f",
+    "f41c8052-3937-4610-a1a8-6af233c9be60",
+    "32078e91-47f8-4df6-9454-c2a1e20fb289",
+    "3cde67de-e410-4ed2-9e63-4c8bd7c09308",
+    "b7955331-0ebe-46db-870e-06c4725df71f",
+    "c0afda71-732a-49f2-a4d5-54067c06a47e",
+    "b99569aa-cc38-4023-bee0-ff2a08016778",
+    "ff56aac3-a0c5-4e59-a7cd-3e95a130f94e",
+    "5a494eab-82ba-4849-9cdc-4d59a548df6f",
+    "9548585f-f332-4a1f-9636-b1f6037c13de",
+    "cd7fbce1-a3de-4fcc-aaf8-59ae53e71763",
+    "ac8a5d8e-88da-4e4d-9294-95f5000c4c92",
+    "817ac4e7-77e8-4132-9c0e-43206fd4b4a5",
+    "a99c8f92-c841-4379-89fd-49423bd02c2d",
+    "83900da4-de2c-44de-adff-059fc68a6c2b",
+    "21fe49de-2086-46cc-9c5d-19af524adc0b",
+    "77852547-5536-4873-a112-4c3456d54293",
+    "d0d6052d-5bd8-419d-886e-32368885bcca",
+    "51930b38-83ea-45a8-a258-16641788b8ca",
+    "18275011-215d-41ad-8bfc-ebd831d09138",
+    "962a1371-54c8-43db-a6b4-3a36d739ad98",
+    "0a301412-a8c9-4d24-98b2-0dd537943223",
+    "9638a537-db5e-49f8-bf58-8b1e7e151f95",
+    "2187c702-4984-44cf-9546-cb804fb0acab",
+    "4122cb64-17fc-45bd-a9f5-d8f6d0ad26a6",
+    "b4f8f5aa-6314-47bc-bafb-ae1365f21ff5",
+    "cc4937f4-2526-468c-afa7-c6ffaf9120cb",
+    "d0472a0e-2d7a-4469-8647-d746c2ed1129",
+    "fa82b018-a1c8-4ee8-b3c0-568daf48bdc4",
+    "fdb9aec7-482b-43be-be90-a3ab06bfe6ea",
+    "8aa28f51-8a30-4eaf-ace5-75178b6b240d",
+    "fb1c15eb-4a81-42a4-8ee8-b9655abb9dbd",
+    "6530d9ae-2ce7-48b2-87ba-3d091d6cf35c",
+    "b5ea9e5d-a230-41a9-a2a8-c56d08cd4456",
+    "7245f3cd-ea7f-49ba-9567-1197e0435158",
+    "22489a61-bec0-4ef1-b52e-f9528104d527",
+    "33bb8272-c5c8-442c-be4a-7709bca1d5f2",
+    "78401ce5-9dd5-4225-9d37-0f508390ba4b",
+    "715debac-774b-4b73-8500-e3c83b352ac2",
+    "894e6d01-788b-43fc-bad0-b23990b918ab",
+    "e4b6b23e-8b5a-418a-a8c0-3675b3789b8a"
+  ],
+  "new_paid_run_ids": [
+    "2babeeed-d482-4395-9858-7127b22bb59f",
+    "a6827d5a-19db-4275-a92b-324ffea5ecfc",
+    "4f81b779-18c5-437e-80a8-e5cca580d3cc",
+    "2940b5ef-685f-4791-b927-e45b1fa57b95",
+    "70a7af97-8eaa-476c-aff5-8bcb5220367d",
+    "38d18b89-fd9e-457b-ab5a-5ddbbfcf6d74",
+    "b08892b0-743e-4ee1-ab08-c0d7762a0aef",
+    "66a49d1d-4b11-4f1d-a984-ccc60c49c0ce",
+    "5de40e4f-95e9-4b0b-99a0-cea2da5caa4f",
+    "537104bd-e5e4-474a-8e2f-6bde00d5d24d",
+    "1f621ef5-0da5-46ec-88cd-657a041910ff",
+    "e735993b-8161-44f4-812a-ad415fb9053c",
+    "b5ea9e5d-a230-41a9-a2a8-c56d08cd4456",
+    "7245f3cd-ea7f-49ba-9567-1197e0435158",
+    "78401ce5-9dd5-4225-9d37-0f508390ba4b",
+    "715debac-774b-4b73-8500-e3c83b352ac2",
+    "894e6d01-788b-43fc-bad0-b23990b918ab",
+    "e4b6b23e-8b5a-418a-a8c0-3675b3789b8a",
+    "fcd1920b-ce4d-4ab7-8267-7fcf3e7c6af6"
+  ],
+  "new_paid_cost_usd": "0.009308675",
+  "new_push_authorized": false,
+  "new_push_performed": false,
+  "public_repository": "https://github.com/romanp-yale/campus-customs-hw06",
+  "limitations": [
+    "no hidden exam key",
+    "no settled invoice verification",
+    "no universal visibility guarantee",
+    "new-layer overhead not separately isolated",
+    "advanced a11y/cross-engine/physical print unverified",
+    "publication pending approval"
+  ]
+}
